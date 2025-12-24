@@ -12,4 +12,4 @@ class TwitterApiIOProducer:
         with faktory.connection() as client:
             params = [query, query_type, next_cursor]
             logging.info(f"Enqueuing TwitterApiIO search job with start_time: {start_time}")
-            client.queue("run_search", args=(params), at=start_time)
+            client.queue("advanced_search", args=(params), at=start_time)
