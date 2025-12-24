@@ -11,7 +11,7 @@ from helpers.scheduler import Scheduler
 class TwitterApiIOConsumer:
     BASE_URL = 'https://api.twitterapi.io/twitter'
 
-    def __init__(self, api_key: str):
+    def __init__(self):
         self.api_key = os.getenv("TWITTER_API_IO_KEY") 
         self.headers = {'x-api-key': self.api_key}
         self.twitter_api_io_producer = twitter_api_io_producer.TwitterApiIOProducer()
