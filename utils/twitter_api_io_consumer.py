@@ -4,7 +4,7 @@ import os
 import ndjson
 import requests
 
-from twitter_api_io_producer import TwitterApiIOProducer
+from utils import twitter_api_io_producer
 from helpers.scheduler import Scheduler
 
 
@@ -14,7 +14,7 @@ class TwitterApiIOConsumer:
     def __init__(self, api_key: str):
         self.api_key = os.getenv("TWITTER_API_IO_KEY") 
         self.headers = {'x-api-key': self.api_key}
-        self.twitter_api_io_producer = TwitterApiIOProducer()
+        self.twitter_api_io_producer = twitter_api_io_producer.TwitterApiIOProducer()
         self.logger = logging.getLogger(__name__)
 
 
